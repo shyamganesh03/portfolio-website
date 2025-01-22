@@ -3,6 +3,7 @@ import React from 'react';
 import List from '../ui/list';
 import AccordionComponent from '../accordion';
 import TextReveal from '../animation/text-reveal';
+import Link from 'next/link';
 
 const Project = () => {
   const edvanza = [
@@ -37,6 +38,8 @@ const Project = () => {
     'Integrating map feature with custom theme.',
     'Integrating firebase crash analytics and google analytics.',
   ];
+
+  const sprouter = ['Developing screens and functionalities of mobile App.'];
 
   const content: any = [
     {
@@ -129,11 +132,52 @@ const Project = () => {
         </TextReveal>
       ),
     },
+    {
+      title: 'Sprouter',
+      content: (
+        <TextReveal>
+          <Label className='opacity-50'>
+            React-Native | Nov 2024 - present
+          </Label>
+          <div className='mt-4'>
+            {sprouter.map((workItem, index) => {
+              return <List label={workItem} key={`Izzo-${index}`} />;
+            })}
+          </div>
+        </TextReveal>
+      ),
+    },
   ];
+  const personalProjectContents: any = [
+    {
+      title: 'CLI for Removing Console.log (npm package)',
+      content: (
+        <TextReveal>
+          <Label className='opacity-50'>Node js | JAN 2025</Label>
+          <List label='Developed a CLI tool to remove console.log statements from the React and ReactNative project.' />
+          <Link
+            href={
+              'https://www.npmjs.com/package/clear-log-cli?activeTab=readme'
+            }
+            className='cursor-pointer'
+            target='_blank'
+          >
+            <List
+              label='npm-package link'
+              className='cursor-pointer text-ring'
+            />
+          </Link>
+        </TextReveal>
+      ),
+    },
+  ];
+
   return (
     <div className='flex flex-col' id='project'>
-      <Label className='text-xl text-primary'>Projects</Label>
+      <Label className='text-xl text-primary'>Company Projects</Label>
       <AccordionComponent accordionItems={content} />
+      <Label className='mt-4 text-xl text-primary'>Personal Projects</Label>
+      <AccordionComponent accordionItems={personalProjectContents} />
     </div>
   );
 };

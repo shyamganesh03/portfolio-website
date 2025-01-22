@@ -5,26 +5,44 @@ import List from '../ui/list';
 import TextReveal from '../animation/text-reveal';
 
 const Career = () => {
-  const workInfo = [
-    '2.9+ years of experience in front-end (React, React Native, Next Js) and back-end development (Nest.js, MongoDB, AWS Lambda).',
-    'Developed web and mobile applications focusing on code reusability and maintainability.',
-    'Created APIs using Nest.js and integrated them with AWS services.',
-    'Developed a chatbot using TypeBot and integrated it with the front-end.',
-    'Designed and implemented an AWS Grafana dashboard to monitor APIs',
-    'Built web-scraping APIs using Puppeteer and integrated data into MongoDB.',
-    'Created prompts and APIs to retrieve data from open-source AI tools like ChatGPT and Gemini.',
-    'Led a React Native project, ensuring bug-free delivery and project closure.',
-  ];
+  const workInfo = {
+    incresco: [
+      '2.9+ years of experience in front-end (React, React Native, Next Js) and back-end development (Nest.js, MongoDB, AWS Lambda).',
+      'Developed web and mobile applications focusing on code reusability and maintainability.',
+      'Created APIs using Nest.js and integrated them with AWS services.',
+      'Developed a chatbot using TypeBot and integrated it with the front-end.',
+      'Designed and implemented an AWS Grafana dashboard to monitor APIs',
+      'Built web-scraping APIs using Puppeteer and integrated data into MongoDB.',
+      'Created prompts and APIs to retrieve data from open-source AI tools like ChatGPT and Gemini.',
+      'Led a React Native project, ensuring bug-free delivery and project closure.',
+    ],
+    soverg: ['Developed mobile applications using React Native.'],
+  };
   const content: any = [
     {
       title: 'Incresco Technology Solutions Private Limited, Bangalore',
       content: (
         <TextReveal>
           <Label className='opacity-50'>
-            Software Engineer | Jan 2022 - Present
+            Software Engineer | Jan 2022 - Oct 2024
           </Label>
           <div className='mt-4'>
-            {workInfo.map((workItem, index) => {
+            {workInfo.incresco.map((workItem, index) => {
+              return <List label={workItem} key={`career-${index}`} />;
+            })}
+          </div>
+        </TextReveal>
+      ),
+    },
+    {
+      title: 'Soverg Pvt Ltd.',
+      content: (
+        <TextReveal>
+          <Label className='opacity-50'>
+            Mobile Application Developer | Nov 2024 - Present
+          </Label>
+          <div className='mt-4'>
+            {workInfo.soverg.map((workItem, index) => {
               return <List label={workItem} key={`career-${index}`} />;
             })}
           </div>
